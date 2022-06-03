@@ -25,8 +25,11 @@ include "config.php";?>
 <script>
 	$(document).ready(function(){
 		$(".add-to-cart").click(function(){
+           // alert($(this).parent().children().eq(2).text());
+			//var price =$(this).parent().children().eq(2).text();
 			//var id=$(this).closest('div')[0].id;
 			var prodindex=$(this)[0].id;
+			 
 		   // console.log(prodindex);
 			$.ajax({
 				url:"server.php",

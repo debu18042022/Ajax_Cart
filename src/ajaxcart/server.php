@@ -8,16 +8,15 @@ include "config.php";
 
 if(isset($_POST['info'])){
     $index=$_POST['info'];
+    $price=$store[$index]['price'];
+    echo $price;
     if($_SESSION['cart'][$index]==''){
-       // echo "hello";
-       // echo "first_time_empty";
         $_SESSION['cart'][$index]=$store[$index];
     }
     else{
-       // echo "second time";
         $_SESSION['cart'][$index]['quantity']+=1;
         $quantity = $_SESSION['cart'][$index]['quantity'];
-        $_SESSION['cart'][$index]['price']*=$quantity;
+        $_SESSION['cart'][$index]['price']=$price*intval($quantity);
     }
 }
 if(isset($_POST['index'])){
